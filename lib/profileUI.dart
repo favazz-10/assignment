@@ -5,7 +5,7 @@ class StackDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true,backgroundColor: Colors.pink,
-        title: Text('Profile UI'),
+        title: const Text('Profile UI'),
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -58,14 +58,14 @@ class StackDemo extends StatelessWidget {
             child: Container(width: 50,height: 50,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(60), color: Colors.red),
-              child: Icon(Icons.message,color: Colors.white,),
+              child: const Icon(Icons.message,color: Colors.white,),
             ),
           ),
           Positioned(top: 195,right: 40,
             child: Container(width: 50,height: 50,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(60), color: Colors.blue),
-              child: Icon(Icons.add,color: Colors.white,),
+              child: const Icon(Icons.add,color: Colors.white,),
             ),
           )
         ],
