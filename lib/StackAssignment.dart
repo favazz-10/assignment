@@ -1,51 +1,62 @@
 import 'package:flutter/material.dart';
 
 class stackassignment extends StatelessWidget {
-  @override
   List img = [
-    ('assets/images/usa.jpg'),
-    ('assets/images/england.jpeg'),
-    ('assets/images/france.jpeg'),
-    ('assets/images/russia.jpeg'),
-    ('assets/images/canada.jpg'),
-  ];
-  List txt = ['USA', 'England', 'France', 'Russia', 'Canada'];
+    "assets/images/usa.jpg",
+    "assets/images/england.jpeg",
+    "assets/images/france.jpeg",
+    "assets/images/russia.jpeg",
+    "assets/images/canada.jpg",
 
+  ];
+  List ttl = ["USA", "ENGLAND", "FRANCE", "RUSSIA", "CANADA", ];
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Stack'),
-        centerTitle: true,
-      ),
-      body: GridView.builder(
-          itemCount: img.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
-          itemBuilder: (context, index) {
-            return Stack(
-              children: [
-                Container(
-                    width: 200,
-                    height: 270,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(15),
+      backgroundColor: Colors.black26,
+      appBar: AppBar(centerTitle: true,
+
+          backgroundColor: Colors.pinkAccent,
+          title: const Text(
+            "Countries",
+          )),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: GridView.builder(
+            itemCount: img.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, mainAxisSpacing: 5, crossAxisSpacing: 5),
+            itemBuilder: (context, index) {
+              return Stack(
+                children: [
+                  SizedBox(
+                    height: 350,
+                    width: 360,
+                    child: Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Image.asset(
+                        img[index],
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                    // color: Colors.red,
-                    // child: Image.asset(img[index])),
-                    child: Positioned(bottom: 200,
+                  ),
+                  Positioned(
+                      bottom: 12,
+                      left: 30,
                       child: Text(
-                        txt[index],
+                        ttl[index],
                         style: const TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30),
-                      ),
-                    ))
-              ],
-            );
-          }),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 25),
+                      )),
+                ],
+              );
+            }),
+      ),
     );
   }
 }
