@@ -38,41 +38,22 @@ class chats extends StatelessWidget {
     '07/09/22'
   ];
   List img = [
-    ('assets/images/headphone.png'),
-    ('assets/images/check.png'),
-    ('assets/images/dribbble.png'),
-    ('assets/images/happy.png'),
-    ('assets/images/india.png'),
-    ('assets/images/spotify.png'),
-    ('assets/images/picasa.png'),
-    ('assets/images/mute.png'),
-    ('assets/images/headphone.png'),
-    ('assets/images/headphone.png'),
+    ('assets/images/1.jpg'),
+    ('assets/images/2.webp'),
+    ('assets/images/3.jpg'),
+    ('assets/images/4.jpg'),
+    ('assets/images/5.jpg'),
+    ('assets/images/6.jpg'),
+    ('assets/images/7.jpg'),
+    ('assets/images/8.jpg'),
+    ('assets/images/9.jpg'),
+    ('assets/images/10.jpg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: ListTile(
-            title: const Text(
-              'WhatsApp',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
-            ),
-            trailing: Wrap(children: const [
-              Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              )
-            ])),
-      ),
+
       body: ListView.builder(
           itemCount: ttl.length,
           itemBuilder: (BuildContext context, int index) {
@@ -81,7 +62,10 @@ class chats extends StatelessWidget {
               child: ListTile(
                 title: Text(ttl[index]),
                 subtitle: Text(subttl[index]),
-                leading: Image.asset(img[index]),
+                leading: CircleAvatar(
+                  maxRadius: 30,
+                  backgroundImage: AssetImage(img[index]),
+                ),
                 trailing: Text(time[index]),
               ),
             );
