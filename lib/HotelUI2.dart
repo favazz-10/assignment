@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
 class hotelui2 extends StatelessWidget {
-  List ic = <IconData>[
-    Icons.star,
-    Icons.star,
-    Icons.star,
-    Icons.star,
-    Icons.star_border,
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
