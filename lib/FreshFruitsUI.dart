@@ -290,7 +290,7 @@ class _ffuiState extends State<ffui> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.only(left: 10.0,),
                     child: Row(
                       children: [
                         const Text(
@@ -422,6 +422,7 @@ class _ffuiState extends State<ffui> {
               ),
               label: 'Cart'),
           BottomNavigationBarItem(
+            tooltip: 'hiii',
               icon: Icon(
                 Icons.person,
               ),
