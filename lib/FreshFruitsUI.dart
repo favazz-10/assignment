@@ -549,7 +549,7 @@ class bestselling extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     child: const Text('Add'),
-                  )
+                  ),
                 ],
               )
             ],
